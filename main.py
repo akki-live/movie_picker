@@ -1,7 +1,23 @@
+from asyncio.log import logger
 import random
+import logging
+import logging.handlers
 import requests
 from bs4 import BeautifulSoup
 import mail
+
+logger = logging.getLogger(__name__)
+logger.setLevel(logging.DEBUG)
+logger_file_handler = logging.handlers.RotatingFileHandler(
+    "movie_picker.log",
+    maxBytes=1024 * 1024,
+    backupCount= 2,
+    encoding="utf8",
+)
+formatter = logging.Formatter("%(asctime)s - %(name)s - %(levelname)s - %(message)s")
+logger_file_handler.setFormatter(formatter)
+logger.addHandler(logger_file_handler)
+
 
 URL = 'http://www.imdb.com/chart/top'
 
@@ -40,3 +56,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+    logger.info(f'Mail sent......')
