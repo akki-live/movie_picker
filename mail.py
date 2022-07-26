@@ -6,7 +6,7 @@ import main
 def send_mails(message):
     port = 465
     smtp_server = "smtp.gmail.com"
-    sender_email = "akash.jaiswal36@gmail.com"
+    sender_email = "akash.jaiswal36@gmailss.com"
     receiver_mail = "akashjaiswal@liveee.in"
     password = "jpzfttdimmsqzrhe"
 
