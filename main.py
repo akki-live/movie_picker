@@ -49,6 +49,7 @@ def main():
 
     movie_choice = f"Movie name is \"{movie.upper()}\" was released in \"{year}\" and has rating \"{rating}\", Crue and Casts are \"{actors}\""
     mail.send_mails(movie_choice)
+    logger.info(f'Suggested movie name is : {movie.upper()}')
     
 
 
@@ -56,4 +57,4 @@ def main():
 
 if __name__ == "__main__":
     main()
-    logger.info(f'Mail sent......')
+    

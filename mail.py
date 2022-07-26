@@ -1,5 +1,6 @@
 import smtplib
 import ssl
+import main
 
 
 def send_mails(message):
@@ -15,7 +16,7 @@ def send_mails(message):
         try:
             server.login(sender_email, password)
             res = server.sendmail(sender_email, receiver_mail, message)
-            print("Mail sent.....")
+            main.logger.info("Mail sent.....")
 
         except:
-            print("Could not login or send mail..")
+            main.logger.info("Could not send mail...")
